@@ -1,6 +1,7 @@
 import pandas as pd
 from statsmodels.tsa.statespace.sarimax import SARIMAX
-
+import subprocess
+import sys
 
 def ticket_forecast(file_name="clean-data.csv"):
 
@@ -21,4 +22,5 @@ def ticket_forecast(file_name="clean-data.csv"):
 
 
 if __name__ == "__main__":
+    subprocess.check_call([sys.executable, "-m", "pip", "install", "statsmodels"])
     ticket_forecast(file_name="clean-data.csv")
